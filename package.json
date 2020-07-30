@@ -1,0 +1,16 @@
+{
+  "name": "Rocketseat-cursoJS-ES6-STARTER",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Wtheodoro/Rocketseat-cursoJS-ES6-STARTER.git",
+  "author": "Walison Teodoro <64755624+Wtheodoro@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4"
+  },
+  "scripts": {
+    "dev": "babel ./main.js -o ./bundle.js -w"
+  }
+}
