@@ -74,3 +74,30 @@ console.log(findeCompany)
 let mapAgesX2 = users.map(users => ({...users, idade: users.idade * 2})).filter(users => users.idade <= 50)
 
 console.log(mapAgesX2)
+
+
+/******************************* ex 3 *******************************/
+/**** 3.1 ****/
+
+const arr = [1, 2, 3, 4, 5]
+
+/*arr.map(function (item) {
+    return item + 10
+}) */
+
+let arrArrow = arr.map( arr => arr + 10 )
+console.log(arrArrow)
+
+/**** 3.2 ****/
+
+const usuario = { nome: 'Diego', idade:23 }
+
+/* function mostraIdade(usuario) {
+    return usuario.idade
+} */
+
+let mostrarIdade = usuario => usuario.idade
+console.log(mostrarIdade(usuario))
+
+
+/**** 3.3 ****/
