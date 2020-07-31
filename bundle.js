@@ -1,5 +1,11 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
@@ -78,15 +84,41 @@ var users = [{
   idade: 30,
   empresa: 'Facebook'
 }];
-/********2.1MAP********/
+/********2.1 MAP********/
 //let ages = users.map(function(index) {
 //    return users.idade
 //})
 // por algum motivo nao conseguir fazer funcionar sem usar uma arrow function
 
-var ages = users.map(function (users) {
+var mapAges = users.map(function (users) {
   return users.idade;
 }); //console.log(users)
 
-console.log(ages);
-/********2.2FILTER********/
+console.log(mapAges);
+/********2.2 FILTER********/
+//function isBigEnough(users) {
+//    return users.idade >= 18 && users.empresa === 'Rocketseat'
+//}
+//let filterAges = users.filter(isBigEnough)
+// a cima está
+
+var filterAges = users.filter(function (users) {
+  return users.empresa === 'Rocketseat' && users.idade > 18;
+});
+console.log(filterAges);
+/********2.3 FIND********/
+
+var findeCompany = users.find(function (users) {
+  return users.empresa === 'Google';
+});
+console.log(findeCompany);
+/********2.3 UNIÃO DE OPERAÇÕES********/
+
+var mapAgesX2 = users.map(function (users) {
+  return _objectSpread(_objectSpread({}, users), {}, {
+    idade: users.idade * 2
+  });
+}).filter(function (users) {
+  return users.idade <= 50;
+});
+console.log(mapAgesX2);

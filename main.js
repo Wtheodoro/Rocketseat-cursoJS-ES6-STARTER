@@ -35,16 +35,42 @@ let users = [
     {nome: 'Lucas', idade: 30, empresa: 'Facebook'}
 ]
 
-/********2.1MAP********/
+
+/********2.1 MAP********/
 
 //let ages = users.map(function(index) {
 //    return users.idade
 //})
 // por algum motivo nao conseguir fazer funcionar sem usar uma arrow function
 
-let ages = users.map(users => users.idade)
+let mapAges = users.map(users => users.idade)
 
 //console.log(users)
-console.log(ages)
+console.log(mapAges)
 
-/********2.2FILTER********/
+
+/********2.2 FILTER********/
+
+//function isBigEnough(users) {
+//    return users.idade >= 18 && users.empresa === 'Rocketseat'
+//}
+
+//let filterAges = users.filter(isBigEnough)
+// a cima está
+let filterAges = users.filter(users => users.empresa === 'Rocketseat'&& users.idade > 18)
+
+console.log(filterAges)
+
+
+/********2.3 FIND********/
+
+let findeCompany = users.find(users => users.empresa === 'Google')
+
+console.log(findeCompany)
+
+
+/********2.3 UNIÃO DE OPERAÇÕES********/
+
+let mapAgesX2 = users.map(users => ({...users, idade: users.idade * 2})).filter(users => users.idade <= 50)
+
+console.log(mapAgesX2)
