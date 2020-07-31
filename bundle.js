@@ -18,30 +18,75 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-alert('Test');
-/*class teste {
-    metodo() {
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-    }
-    outroMetodo() {
-         
-    }
-}*/
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Admin = function Admin() {
-  _classCallCheck(this, Admin);
-};
-
-var Usuario = /*#__PURE__*/function (_Admin) {
-  _inherits(Usuario, _Admin);
-
-  var _super = _createSuper(Usuario);
-
-  function Usuario() {
+/******************************* ex 1 *******************************/
+var Usuario = /*#__PURE__*/function () {
+  function Usuario(email, senha) {
     _classCallCheck(this, Usuario);
 
-    return _super.apply(this, arguments);
+    this.email = email;
+    this.senha = senha;
   }
 
+  _createClass(Usuario, [{
+    key: "isAdmin",
+    value: function isAdmin() {
+      return this.admin === true;
+    }
+  }]);
+
   return Usuario;
-}(Admin);
+}();
+
+var Admin = /*#__PURE__*/function (_Usuario) {
+  _inherits(Admin, _Usuario);
+
+  var _super = _createSuper(Admin);
+
+  function Admin(email, senha) {
+    var _this;
+
+    _classCallCheck(this, Admin);
+
+    _this = _super.call(this, email, senha);
+    _this.admin = true;
+    return _this;
+  }
+
+  return Admin;
+}(Usuario);
+
+var User1 = new Usuario('email@teste.com', 'senha123');
+var Adm1 = new Admin('email@teste.com', 'senha123');
+console.log(User1.isAdmin());
+console.log(Adm1.isAdmin());
+/******************************* ex 2 *******************************/
+
+var users = [{
+  nome: 'Diego',
+  idade: 23,
+  empresa: 'Rocketseat'
+}, {
+  nome: 'Gabriel',
+  idade: 15,
+  empresa: 'Rocketseat'
+}, {
+  nome: 'Lucas',
+  idade: 30,
+  empresa: 'Facebook'
+}];
+/********2.1MAP********/
+//let ages = users.map(function(index) {
+//    return users.idade
+//})
+// por algum motivo nao conseguir fazer funcionar sem usar uma arrow function
+
+var ages = users.map(function (users) {
+  return users.idade;
+}); //console.log(users)
+
+console.log(ages);
+/********2.2FILTER********/

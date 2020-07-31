@@ -1,25 +1,50 @@
-alert('Test')
 /******************************* ex 1 *******************************/
-// class teste {
-//     metodo() {
-//     }
-//     outroMetodo() {
-         
-//     }
-// }
+class Usuario {
+    constructor(email, senha)  {
+        this.email = email
+        this.senha = senha
+    }
+
+    isAdmin() {
+        return this.admin === true
+    }  
+}
+
+class Admin extends Usuario {
+    constructor(email, senha) {
+        super(email, senha)
+
+        this.admin = true
+    }
+}
+
+const User1 = new Usuario('email@teste.com', 'senha123')
+const Adm1 = new Admin('email@teste.com', 'senha123')
+
+console.log(User1.isAdmin())
+console.log(Adm1.isAdmin())
+
+
+
+
 
 /******************************* ex 2 *******************************/
-const usuarios = [
+let users = [
     {nome: 'Diego', idade: 23, empresa: 'Rocketseat'},
     {nome: 'Gabriel', idade: 15, empresa: 'Rocketseat'},
     {nome: 'Lucas', idade: 30, empresa: 'Facebook'}
 ]
 
-/********MAP********/
+/********2.1MAP********/
 
-let ages = usuarios.map
-console.log(usuarios)
+//let ages = users.map(function(index) {
+//    return users.idade
+//})
+// por algum motivo nao conseguir fazer funcionar sem usar uma arrow function
 
+let ages = users.map(users => users.idade)
 
+//console.log(users)
+console.log(ages)
 
->>>>>>> 201772a7f4ee36132e90c18a7c5f1100d5be6ee3
+/********2.2FILTER********/
