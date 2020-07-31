@@ -1,10 +1,18 @@
 alert('Test')
 
-class teste {
+/*class teste {
     metodo() {
 
     }
     outroMetodo() {
          
     }
+}*/
+
+class Admin {
+
+}
+
+class Usuario extends Admin {
+    
 }
