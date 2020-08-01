@@ -101,3 +101,28 @@ console.log(mostrarIdade(usuario))
 
 
 /**** 3.3 ****/
+
+const nome = "Diego"
+const idade = 23
+
+/* function mostrarUsuario(nome = 'Diego', idade = 18) {
+    return { nome, idade }
+}
+
+console.log(mostrarUsuario(nome, idade))
+console.log(mostrarUsuario(nome))*/
+
+let mostrarUsuario = (nome = 'Diego', idade = 18 ) => ({nome, idade})
+console.log(mostrarUsuario(nome, idade))
+console.log(mostrarUsuario(nome))
+
+
+/**** 3.4 ****/
+
+/* const promise = function () {
+    return new promise(function(resolve, reject){
+        return resolve
+    })
+} */
+
+let promiseArrow = () => new promise((resolve, reject) => resolve())
