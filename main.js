@@ -126,3 +126,34 @@ console.log(mostrarUsuario(nome))
 } */
 
 let promiseArrow = () => new promise((resolve, reject) => resolve())
+
+
+/******************************* ex 4 *******************************/
+/**** 4.1 ****/
+
+const empresa = {
+    nome: 'Rocketseat',
+    endereco: {
+        cidade: 'Rio do Sul',
+        estado: 'SC'
+    }
+}
+
+/* let { nome, endereco: {cidade, estado}} = empresa
+console.log(nome)
+console.log(cidade)
+console.log(estado) 
+
+Pra quem está usando esse material para comparar resultados,já aviso que
+estou colocando todos os exercicios no mesmo arquivo js e por isso as variaveis tem o mesmo nome, a fim de rodar o codigo para testar é preciso trocar o nome das variaveis repetidas */
+
+
+/**** 4.2 ****/
+
+function mostrarInfo({ nome, idade }) {
+    return `${nome} tem ${idade} anos`
+}
+console.log(mostrarInfo({ nome: 'Diego', idade: 23 }))
+
+
+/******************************* ex 5 *******************************/
