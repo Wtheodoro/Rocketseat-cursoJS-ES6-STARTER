@@ -218,3 +218,72 @@ console.log(mostrarInfo({
   idade: 23
 }));
 /******************************* ex 5 *******************************/
+
+/**** 5.1 REST ****/
+
+var arrRest = [1, 2, 3, 4, 5, 6];
+var x = arrRest[0],
+    y = arrRest.slice(1);
+console.log(x);
+console.log(y);
+
+function somaRest() {
+  for (var _len = arguments.length, params = new Array(_len), _key = 0; _key < _len; _key++) {
+    params[_key] = arguments[_key];
+  }
+
+  return params.reduce(function (total, next) {
+    return total + next;
+  });
+}
+
+console.log(somaRest(1, 2, 3, 4, 5, 6));
+console.log(somaRest(1, 2));
+/**** 5.2 SPREAD ****/
+
+var usuarioSpread = {
+  nome: 'Diego',
+  idade: 23,
+  endereco: {
+    cidade: 'Rio do Sul',
+    uf: 'SC',
+    pais: 'Brasil'
+  }
+};
+
+var usuarioSpread2 = _objectSpread(_objectSpread({}, usuarioSpread), {}, {
+  nome: 'Gabriel'
+});
+
+var usuarioSpread3 = _objectSpread(_objectSpread({}, usuarioSpread), {}, {
+  endereco: {
+    cidade: 'Lontras'
+  }
+});
+
+console.log(usuarioSpread2);
+console.log(usuarioSpread3);
+/******************************* ex 6 *******************************/
+
+var usuarioEx6 = 'Diego';
+var idadeEx6 = 23;
+console.log('O usuário ' + usuarioEx6 + ' possui ' + idadeEx6 + ' anos');
+console.log("O usu\xE1rio ".concat(usuarioEx6, " possui ").concat(idadeEx6, " anos"));
+/******************************* ex 7 *******************************/
+
+var nomeEx7 = 'Diego';
+var idadeEx7 = 23;
+var usuarioEx7 = {
+  nomeEx7: nomeEx7,
+  idadeEx7: idadeEx7,
+  cidadeEx7: 'Rio do sul'
+};
+var usuarioEx7OSS = {
+  nomeEx7: nomeEx7,
+  idadeEx7: idadeEx7,
+  cidadeEx7: 'Rio do Sul'
+};
+console.log(usuarioEx7OSS);
+/*
+FIM DOS DESAFIOS DESTA ETAPA! UMA OBSERVAÇÃO MUITO IMPORTANTE: MELHOR SEPARAR OS ARQUIVOS JS POR EXERCICIOS POR TEREM MUITAS VARIAVEIS COM O MESMO NOME SENDO NECESSARIO INVENTAR NOMES DIFICEIS PARA VARIAVEIS E CONSTANTES POSTERIORES
+*/

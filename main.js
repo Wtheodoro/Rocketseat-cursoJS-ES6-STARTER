@@ -157,3 +157,53 @@ console.log(mostrarInfo({ nome: 'Diego', idade: 23 }))
 
 
 /******************************* ex 5 *******************************/
+/**** 5.1 REST ****/
+const arrRest = [1, 2, 3, 4, 5, 6]
+let [x, ...y] = arrRest
+console.log(x)
+console.log(y)
+
+function somaRest(...params) {
+    return params.reduce((total, next) => total + next)
+}
+console.log(somaRest(1, 2, 3, 4, 5, 6))
+console.log(somaRest(1, 2))
+
+/**** 5.2 SPREAD ****/
+const usuarioSpread = {
+    nome: 'Diego',
+    idade: 23,
+    endereco: {
+        cidade: 'Rio do Sul',
+        uf: 'SC',
+        pais: 'Brasil'
+    },
+}
+
+let usuarioSpread2 = {...usuarioSpread, nome: 'Gabriel'}
+let usuarioSpread3 = {...usuarioSpread, endereco: {cidade: 'Lontras'}}
+console.log(usuarioSpread2)
+console.log(usuarioSpread3)
+
+
+/******************************* ex 6 *******************************/
+const usuarioEx6 = 'Diego'
+const idadeEx6 = 23
+console.log('O usuário ' + usuarioEx6 + ' possui ' + idadeEx6 + ' anos')
+console.log(`O usuário ${usuarioEx6} possui ${idadeEx6} anos`)
+
+
+/******************************* ex 7 *******************************/
+const nomeEx7 = 'Diego'
+const idadeEx7 = 23
+const usuarioEx7 = {
+    nomeEx7: nomeEx7,
+    idadeEx7: idadeEx7,
+    cidadeEx7: 'Rio do sul'
+}
+let usuarioEx7OSS = {nomeEx7, idadeEx7, cidadeEx7: 'Rio do Sul'}
+console.log(usuarioEx7OSS)
+
+/*
+FIM DOS DESAFIOS DESTA ETAPA! UMA OBSERVAÇÃO MUITO IMPORTANTE: MELHOR SEPARAR OS ARQUIVOS JS POR EXERCICIOS POR TEREM MUITAS VARIAVEIS COM O MESMO NOME SENDO NECESSARIO INVENTAR NOMES DIFICEIS PARA VARIAVEIS E CONSTANTES POSTERIORES
+*/
